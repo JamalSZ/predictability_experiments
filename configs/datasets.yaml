@@ -1,0 +1,27 @@
+# Local real-world datasets.  Nothing is downloaded: replace the placeholder
+# paths with the location of YOUR local files.  Only the first (slice: head)
+# or last (slice: tail) `max_n` values are used (hard cap 5000 for now).
+defaults:
+  max_n: 5000
+  slice: head
+
+datasets:
+  - name: ETTh1
+    path: /PATH/TO/ETTh1.csv          # Electricity Transformer Temperature, hourly
+    column: OT                        # oil temperature column
+    season_length: 24
+
+  - name: SP500
+    path: /PATH/TO/sp500_daily.csv    # S&P 500 daily open prices
+    column: Open
+    season_length: 1
+
+  - name: Temperature
+    path: /PATH/TO/zurich_temperature_hourly.csv
+    column: temperature               # <- adapt to your column name
+    season_length: 24
+
+  - name: Precipitation
+    path: /PATH/TO/cpc_conus_precip_daily.csv
+    column: precip                    # <- adapt to your column name
+    season_length: 1
